@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;tarefa8&apos; to &apos;tarefacobertura&apos;&#x0A;- Original project: &apos;testingtools-aula3-junit4&apos;&#x0A;- Original element: &apos;testingtools-aula3-junit4/src/test/java/tarefa8&apos;&#x0A;- Renamed element: &apos;testingtools-aula3-junit4/src/test/java/tarefacobertura&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;tarefa8&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;tarefa8" name="tarefacobertura" qualified="false" references="true" stamp="1606758087663" textual="false" version="1.0"/>
+</session>

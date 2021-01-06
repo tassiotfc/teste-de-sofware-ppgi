@@ -1,0 +1,30 @@
+image: maven:latest
+
+stages:
+  - build
+  - test
+  - package
+
+build:
+  stage: build
+  script:
+    - mvn compile
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - mvn test
+  only:
+    - master
+
+package:
+  stage: package
+  script:
+    - mvn -DskipTests=true package
+  only:
+    - master
+  artifacts:
+    paths:
+      - target/

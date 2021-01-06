@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: br.ufal.ic.testingtools.sort.SortTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.021 s <<< FAILURE! - in br.ufal.ic.testingtools.sort.SortTest
+testSort  Time elapsed: 1.011 s  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 1000 milliseconds
+	at br.ufal.ic.testingtools.sort.SortTest.testSort(SortTest.java:22)
+

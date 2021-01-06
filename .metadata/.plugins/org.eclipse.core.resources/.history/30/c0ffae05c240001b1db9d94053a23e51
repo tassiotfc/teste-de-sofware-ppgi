@@ -1,0 +1,37 @@
+package solver;
+
+
+import org.chocosolver.solver.variables.BoolVar;
+import org.chocosolver.solver.variables.IntVar;
+import org.chocosolver.solver.*;
+import org.chocosolver.solver.constraints.nary.cnf.LogOp;;
+
+//import org.testng.mustache.Model;
+//import org.testng.reporters.jq.Model;;
+
+public class SolverBoolean {
+	
+	public static void main(String[] args) {
+		Model model = new Model("my first problem");
+		// 2. Create variables
+		BoolVar A = model.boolVar("A");
+		BoolVar B = model.boolVar("B");
+		BoolVar C = model.boolVar("C");
+		BoolVar D = model.boolVar("D");
+		// 3. Post constraints
+		// (x1 or x2) ^ (x1 or ~x2) ^ (~x1 or ~x3)
+		model.addClauses(
+		 LogOp.and(
+		 LogOp.or(x1, x2),
+		 LogOp.or(x1, x2.not()),
+		 LogOp.or(x1.not(), x3.not())
+		 )
+		);
+		// 4. Solve the problem
+		model.getSolver().solve();
+		// 5. Print the solution
+		System.out.println(x1); // X1 = 1
+		System.out.println(x2); // X2 = 0
+		System.out.println(x3); // X3 = 0
+    }
+}

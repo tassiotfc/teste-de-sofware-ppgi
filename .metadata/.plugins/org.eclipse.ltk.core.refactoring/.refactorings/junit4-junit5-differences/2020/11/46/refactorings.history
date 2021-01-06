@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.example.anotattions.AssertionsTest.java&apos; to &apos;AssertionsTestJUnit5.java&apos;&#x0A;- Original project: &apos;junit4-junit5-differences&apos;&#x0A;- Original element: &apos;com.example.anotattions.AssertionsTest.java&apos;&#x0A;- Renamed element: &apos;com.example.anotattions.AssertionsTestJUnit5.java&apos;" description="Rename compilation unit &apos;AssertionsTest.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.example.anotattions{AssertionsTest.java" name="AssertionsTestJUnit5.java" references="false" stamp="1604930949243" version="1.0"/>
+</session>

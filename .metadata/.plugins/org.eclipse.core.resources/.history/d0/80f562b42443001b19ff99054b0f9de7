@@ -1,0 +1,14 @@
+package br.ufal.ic.testingtools.demo;
+
+import br.ufal.ic.testingtools.stack.Stack;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Stack<Integer> stack = new Stack<Integer>(10);
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;br.ufal.ic.testingtools.demo&apos; to &apos;testingtools/src/main/java&apos;&#x0A;- Original project: &apos;testingtools-aula4-junit5&apos;&#x0A;- Destination element: &apos;testingtools/src/main/java&apos;&#x0A;- Original element: &apos;testingtools-aula4-junit5/src/main/java/br.ufal.ic.testingtools.demo&apos;" description="Copy package" destination="=testingtools/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.ufal.ic.testingtools.demo" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1608512305384" version="1.0"/>
+</session>

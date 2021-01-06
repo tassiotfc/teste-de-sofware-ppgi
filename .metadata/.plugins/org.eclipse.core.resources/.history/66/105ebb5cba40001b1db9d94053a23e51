@@ -1,0 +1,10 @@
+package solver;
+
+import org.chocosolver.solver.Model;
+
+public class Demo {
+	
+	Model model = new Model("my firt problem");
+	
+	
+}

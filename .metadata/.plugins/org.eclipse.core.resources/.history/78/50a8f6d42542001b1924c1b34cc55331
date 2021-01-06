@@ -1,0 +1,130 @@
+package br.ufal.ic.testingtools.stack;
+
+import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class StackTest {
+	
+	Stack<Integer> stack;
+	
+	@BeforeEach
+	public void startStack() {
+		final int size = 10;
+		stack = new Stack<Integer>(size); 	
+	}
+	
+	@Test
+	public void testLengthStack() {
+		stack.push(40);
+		assertEquals(1, stack.size(), "The length stack is not 1");
+	}
+	
+	@Test
+	public void testEmptyStack() {
+		assertEquals(true, stack.empty(), "The initial stack is not empty");
+	}
+	
+	@Test
+	public void testPush() {
+		stack.push(2);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		stack.push(6);
+		stack.push(7);
+		stack.push(8);
+		stack.push(9);
+		stack.push(10);
+
+		assertAll(
+				() -> assertEquals(10, stack.pop().intValue()),
+				() -> assertEquals(9, stack.pop().intValue()),
+				() -> assertEquals(8, stack.pop().intValue()),
+				() -> assertEquals(7, stack.pop().intValue()),
+				() -> assertEquals(6, stack.pop().intValue()),
+				() -> assertEquals(5, stack.pop().intValue()),
+				() -> assertEquals(4, stack.pop().intValue()),
+				() -> assertEquals(3, stack.pop().intValue()),
+				() -> assertEquals(2, stack.pop().intValue()),
+				() -> assertEquals(1, stack.pop().intValue())
+		);
+		
+	}
+
+	@Test
+	public void testPushException() {
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		stack.push(6);
+		stack.push(7);
+		stack.push(8);
+		stack.push(9);
+		stack.push(10);
+		Throwable exception = assertThrows(OverFlowStackException.class, () -> stack.push(15));
+		assertEquals("Overflow", exception.getMessage());
+	}
+	
+	@Test
+	public void testPeekException() {
+		Throwable exception = assertThrows(UnderflowStackException.class, () -> stack.peek().intValue());
+		assertEquals("Underflow", exception.getMessage());
+	}
+	
+	
+//	@Test
+//	public void testEmptyStack() {
+//		final int size = 10;
+//		Stack<Integer> stack = new Stack<Integer>(size);
+//		assertEquals("The initial stack is not empty", true, stack.empty());
+//	}
+//		
+//	@Test
+//	public void testPush() {
+//		final int size = 3;
+//		Stack<Integer> stack = new Stack<Integer>(size);
+//		stack.push(90);
+//		stack.push(22);
+//		stack.push(18);
+//		assertEquals(18, stack.pop().intValue());
+//		assertEquals(22, stack.pop().intValue());
+//		assertEquals(90, stack.pop().intValue());
+//	}
+//	
+//	//Teste onde o mutante if (this.structure.size() <= this.stackSize), < para <=, sobrevive!
+//	@Test
+//	public void testPushComMutacaoPassa() {
+//		final int size = 3;
+//		Stack<Integer> stack = new Stack<Integer>(size);
+//		stack.push(90);
+//		stack.push(22);
+//		stack.push(18);
+//		stack.push(11);
+//		assertEquals(11, stack.pop().intValue());
+//		assertEquals(18, stack.pop().intValue());
+//		assertEquals(22, stack.pop().intValue());
+//		assertEquals(90, stack.pop().intValue());
+//	}
+//
+//	//Bom teste para falhar quando a mutação if (this.structure.size() <= this.stackSize)  acontece! < para <=
+//	@Test
+//	public void testPush2() {
+//		Stack<Integer> stack = new Stack<Integer>(3);
+//		try {
+//		   stack.push(90);
+//		   stack.push(22);
+//		   stack.push(18);
+//		   stack.push(10);
+//	      fail("Stack allowed 4 elements!");
+//		} catch(OverFlowStackException e) {
+//			assertEquals("Overflow", e.getMessage(), "");
+//	   }
+//	}
+}
